@@ -1,0 +1,14 @@
+<!-- [] are property binding / becomes active after two second / bound to typescript property and will update dynamically -->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  add server
+</button>
+
+<!-- <p [innerText]="allowNewServer"></p> -->
+
+<p>{{ serverCreationStatus }}</p>
+<app-server></app-server>
+<app-server></app-server>
