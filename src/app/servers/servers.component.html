@@ -1,4 +1,16 @@
+<!-- One Way Binding -->
+
 <!-- [] are property binding / becomes active after two second / bound to typescript property and will update dynamically -->
+<!-- <label>Server Name</label> -->
+<!-- $event the data from the event  -->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)" /> -->
+<!-- <p>{{ serverName }}</p> -->
+
+<!-- Two way data binding -->
+<label>Server Name</label>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<!-- <p>{{ serverName }}</p> -->
+
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
