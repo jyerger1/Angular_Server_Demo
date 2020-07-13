@@ -3,8 +3,8 @@
 <!-- [] are property binding / becomes active after two second / bound to typescript property and will update dynamically -->
 <!-- <label>Server Name</label> -->
 <!-- $event the data from the event  -->
-<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)" /> -->
-<!-- <p>{{ serverName }}</p> -->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<p>{{ serverName }}</p> -->
 
 <!-- Two way data binding -->
 <label>Server Name</label>
@@ -21,6 +21,16 @@
 
 <!-- <p [innerText]="allowNewServer"></p> -->
 
-<p>{{ serverCreationStatus }}</p>
-<app-server></app-server>
-<app-server></app-server>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+<app-server *ngFor="let server of servers"></app-server>
+
+<!-- else / if statement example -->
+<!-- <p *ngIf="serverCreated; else noServer">
+  Server was created, server name is {{ serverName }}
+</p>
+<ng-template #noServer>
+  <p>
+    No server was created.
+  </p>
+</ng-template> -->
